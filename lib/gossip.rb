@@ -7,10 +7,30 @@ class Gossip
 		@author = author
 	end
 
+	def modify(author, content)
+		gossips = []
+		CSV.open("db/gossip.csv","a+") do |csv|
+			gossips = csv.read
+			gossips.each_with_index do |gossip,i|
+				if gossip == [self.author,self.content]
+					gossips[i] = [author,content]
+					break 
+				end
+			end
+		end
+		puts gossips
+		CSV.open("db/gossip.csv","w+") do |csv|
+			gossips.each do |gossip|
+				csv << [gossip[0], gossip[1]]
+			end
+		end
+
+	end
+
 	def self.find(id)
 		return Gossip.all[id]
 	end
-	
+
 	def save
 		CSV.open("db/gossip.csv","ab") do |csv|
 			csv << [@author, @content]

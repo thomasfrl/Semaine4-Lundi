@@ -1,13 +1,20 @@
 <html>
-  <head>
-    <title>Afficher un potin</title>
-  </head>
-  <body>
-    <h1>Page potin !</h1>
-    <p>Voici la page potin n°<%= id %></p>
-    <p>Son auteur : <%= gossip.author %></p>
-    <p>Le contenu du potin : <%= gossip.content %> </p>
+<head>
+  <title>Afficher un potin</title>
+</head>
+<body>
+  <h1>Page potin !</h1>
+  <p>Voici la page potin n°<%= id %></p>
+  <p>Son auteur : <%= gossip.author %></p>
+  <p>Le contenu du potin : <%= gossip.content %> </p>
 
-    <p><a href="/">Cliquer ici pour revenir à la liste des potins</a></p>
-  </body>
+  <p><a href="/">Cliquer ici pour revenir à la liste des potins</a></p>
+  <p>Pour modifier le potin, utiliser le formulaire ci-dessous :</p>
+  <form action='/gossip/modify/<%=id%>' method='POST'>
+    Modifie ton blase : <input type='text' name='gossip_author' value='<%= gossip.author %>' /><br/>
+    Modifie ton potin : <input type='text' name='gossip_content' value='<%= gossip.content %>'/><br/>
+    <input type='submit'/>
+  </form>
+
+</body>
 </html>

@@ -14,4 +14,8 @@ class ApplicationController < Sinatra::Base
 	get '/gossip/:id' do |id|
 		erb :gossip_display, locals: {gossip: Gossip.all[id.to_i] , id: id}
 	end
+	post '/gossip/modify/:id' do |id|
+		Gossip.all[id.to_i].modify(params["gossip_author"],params["gossip_content"])
+		redirect '/'
+	end
 end
