@@ -1,23 +1,25 @@
 	source 'https://rubygems.org' 
- 
-		ruby '2.5.1' 
+	
+	ruby '2.5.1' 
 
-		gem 'rubocop', '~> 0.57.2' 
+	gem 'rubocop', '~> 0.57.2' 
 
-		gem 'rspec' 
+	gem 'rspec' 
 
-		gem 'pry' 
+	gem 'pry' 
 
-		gem 'dotenv' 
+	gem 'dotenv' 
 
-		gem 'nokogiri' 
+	gem 'nokogiri' 
 
-		gem 'watir' 
+	gem 'watir' 
 
-		gem 'json' 
+	gem 'json' 
 
-		gem 'csv' 
+	gem 'csv' 
 
-		gem 'google_drive' 
+	gem 'google_drive' 
 
-		gem 'launchy' 
+	gem 'launchy' 
+	gem 'sinatra'
+	gem 'shotgun'
