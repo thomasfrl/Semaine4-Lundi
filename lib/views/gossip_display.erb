@@ -8,6 +8,21 @@
   <p>Son auteur : <%= gossip.author %></p>
   <p>Le contenu du potin : <%= gossip.content %> </p>
 
+  <h3>---------------Voici les commentaires------------------</h3>
+  <% comments.each_with_index do |comment,i| %>
+  <p>
+    <%= i %> : <br/>
+    <%= comment %><br>
+  </p>
+  <% end %>
+
+  <h3>---------------Ajouter votre commentaire-------------</h3>
+  <form action='/comment/new/<%=id%>' method='POST'>
+    Ajoute ton commetaire : <input type='text' name='comment_content' /><br/>
+    <input type='submit'/>
+  </form>
+
+
   <p><a href="/">Cliquer ici pour revenir à la liste des potins</a></p>
   <p>Pour modifier le potin, utiliser le formulaire ci-dessous :</p>
   <form action='/gossip/modify/<%=id%>' method='POST'>
